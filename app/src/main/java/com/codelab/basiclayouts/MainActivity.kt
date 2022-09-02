@@ -213,7 +213,10 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 // Step: Bottom navigation - Material
 @Composable
 private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
-    BottomNavigation(modifier = modifier) {
+    BottomNavigation(
+        backgroundColor = MaterialTheme.colors.background,
+        modifier = modifier
+    ) {
         BottomNavigationItem(
             icon = { Icon(imageVector = Icons.Default.Spa, contentDescription = null) },
             label = { Text(stringResource(id = R.string.bottom_navigation_home)) },
@@ -223,7 +226,7 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
         BottomNavigationItem(
             icon = { Icon(imageVector = Icons.Default.AccountCircle, contentDescription = null) },
             label = { Text(stringResource(id = R.string.bottom_navigation_profile)) },
-            selected = true,
+            selected = false,
             onClick = { }
         )
     }
