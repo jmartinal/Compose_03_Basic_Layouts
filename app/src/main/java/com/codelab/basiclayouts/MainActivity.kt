@@ -47,6 +47,8 @@ fun SearchBar(
         value = "",
         onValueChange = {},
         modifier = modifier
+            .fillMaxWidth()
+            .heightIn(min = 56.dp)
     )
 }
 
