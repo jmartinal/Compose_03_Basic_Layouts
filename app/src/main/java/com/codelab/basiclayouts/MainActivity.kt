@@ -221,7 +221,7 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
             icon = { Icon(imageVector = Icons.Default.Spa, contentDescription = null) },
             label = { Text(stringResource(id = R.string.bottom_navigation_home)) },
             selected = true,
-            onClick = {  }
+            onClick = { }
         )
         BottomNavigationItem(
             icon = { Icon(imageVector = Icons.Default.AccountCircle, contentDescription = null) },
@@ -235,7 +235,11 @@ private fun SootheBottomNavigation(modifier: Modifier = Modifier) {
 // Step: MySoothe App - Scaffold
 @Composable
 fun MySootheApp() {
-    // Implement composable here
+    MySootheTheme {
+        Scaffold(bottomBar = { SootheBottomNavigation() }) { paddingValues ->
+            HomeScreen(Modifier.padding(paddingValues))
+        }
+    }
 }
 
 private val alignYourBodyData = listOf(
@@ -308,7 +312,7 @@ fun AlignYourBodyRowPreview() {
 fun HomeSectionPreview() {
     MySootheTheme {
         HomeSection(title = R.string.align_your_body) {
-             AlignYourBodyRow()
+            AlignYourBodyRow()
         }
     }
 }
